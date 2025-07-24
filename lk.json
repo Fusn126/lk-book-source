@@ -1,0 +1,60 @@
+[
+  {
+    "bookSourceComment": "",
+    "bookSourceGroup": "轻小说",
+    "bookSourceName": "轻之国度",
+    "bookSourceType": 0,
+    "bookSourceUrl": "https://www.lightnovel.fun/",
+    "bookUrlPattern": "",
+    "customOrder": 1,
+    "enabled": true,
+    "enabledCookieJar": false,
+    "enabledExplore": true,
+    "exploreUrl": "<js>\ngetOptionString = (code) => {\n  return JSON.stringify({\n    method: \"POST\",\n    body: JSON.stringify({\n      is_encrypted: 0,\n      platform: \"pc\",\n      client: \"web\",\n      sign: \"\",\n      gz: 0,\n      d: JSON.stringify({\n        parent_gid: 3,\n        gid: code,\n        page: \"{{page}}\",\n        security_key: JSON.parse(decodeURIComponent(cookie.getKey(\"https://www.lightnovel.fun/\", \"token\"))).security_key,\n      }),\n    }),\n  });\n};\ndiscover = [\n  {\n    title: \"最新\",\n    url: `https://www.lightnovel.fun/proxy/api/category/get-article-by-cate,${getOptionString('106')}`,\n    style: {\n      layout_flexGrow: 1,\n    },\n  },\n  {\n    title: \"整卷\",\n    url: `https://www.lightnovel.fun/proxy/api/category/get-article-by-cate,${getOptionString('107')}`,\n    style: {\n      layout_flexGrow: 1,\n    },\n  },\n  {\n    title: \"原创\",\n    url: `https://www.lightnovel.fun/proxy/api/category/get-article-by-cate,${getOptionString('111')}`,\n    style: {\n      layout_flexGrow: 1,\n    },\n  },\n];\nJSON.stringify(discover);\n</js>",
+    "header": "{\n  \"Referer\": \"https://www.lightnovel.fun/\"\n}",
+    "lastUpdateTime": 1753348074875,
+    "loginUrl": "https://www.lightnovel.fun/",
+    "respondTime": 180000,
+    "ruleBookInfo": {
+      "author": "$.series.author",
+      "coverUrl": "$.series.cover",
+      "init": "<js>\njsContent=src.match(/<script>window.__NUXT__.+?<.script>/gi)[0].replace(/<.?script>/gi,'')\nwindow={}\neval(jsContent)\nJSON.stringify(window.__NUXT__.data)\n</js>\n$[0]",
+      "intro": "@js:\nres = \"\"\nif (result.series) {\n  res = result.series.intro;\n  res += \"\\n上传者：\\n\";\n  result.series.editors.forEach((i) => {\n    res += `- 昵称：${i.nickname}|签名：${i.sign}|等级：${i.level.level}|${i.level.name}\\n`;\n  });\n} else {\n  res = result.article.summary;\n}\nres;",
+      "kind": "@js:\nres=[\"评分: \"+{{$.series.score}}]\nresult.series.editors.forEach(i=>res.push(i.nickname))\nif (result.series.name.match(/\\[.+?\\]/gi)) {\n  result.series.name.match(/\\[.+?\\]/gi).forEach(i=>res.push(i.replace(/[\\[\\]]/gi,'')));\n}\nres",
+      "lastChapter": "$.series.articles[-1].title",
+      "name": "$.series.name##\\[.+?\\]##"
+    },
+    "ruleContent": {
+      "content": "@js:\njsContent=src.match(/<script>window.__NUXT__.+?<.script>/gi)[0].replace(/<.?script>/gi,'')\nwindow={}\neval(jsContent)\nres=window.__NUXT__.data[0].article.content\nres",
+      "imageStyle": ""
+    },
+    "ruleExplore": {
+      "author": "$.author&&$.editors.*.nickname",
+      "bookList": "$.data.list",
+      "bookUrl": "@js:\n('{{$.sid}}'!=0)?\"https://www.lightnovel.fun/cn/series/{{$.sid}}\":\"https://www.lightnovel.fun/cn/detail/{{$.aid}}\"",
+      "coverUrl": "$.cover",
+      "intro": "@js:\nres=\"\\n上传者：\\n\"\nresult.editors.forEach(i=>{\n  res+=`- 昵称：${i.nickname}|签名：${i.sign}|等级：${i.level.level}|${i.level.name}\\n`\n})\nres",
+      "kind": "$.last_time",
+      "name": "$.title",
+      "wordCount": "@js:('{{$.sid}}'!=0)?\"合集\":\"\""
+    },
+    "ruleSearch": {
+      "author": "$.author",
+      "bookList": "$.data.list",
+      "bookUrl": "https://www.lightnovel.fun/cn/detail/{{$.aid}}",
+      "checkKeyWord": "败犬",
+      "coverUrl": "$.cover",
+      "intro": "",
+      "kind": "",
+      "name": "$.title"
+    },
+    "ruleToc": {
+      "chapterList": "@js:\nres = []\njsContent=src.match(/<script>window.__NUXT__.+?<.script>/gi)[0].replace(/<.?script>/gi,'')\nwindow={}\neval(jsContent)\nif(window.__NUXT__.routePath.includes('detail')){\n  res = [JSON.stringify(window.__NUXT__.data[0].article)]\n} else {\n  res = window.__NUXT__.data[0].series.articles.map(i=>JSON.stringify(i))\n}\nres",
+      "chapterName": "$.title",
+      "chapterUrl": "https://www.lightnovel.fun/cn/detail/{{$.aid}}",
+      "updateTime": "$.time"
+    },
+    "searchUrl": "@js:\nurl='https://www.lightnovel.fun/proxy/api/search/search-result';\nbody = {\n    \"is_encrypted\": 0,\n    \"platform\": \"pc\",\n    \"client\": \"web\",\n    \"sign\": \"\",\n    \"gz\": 0,\n    \"d\": {\n        \"q\": \"{{key}}\",\n        \"type\": 6,\n        \"page\": page,\n        \"security_key\": JSON.parse(decodeURIComponent(cookie.getKey(\"https://www.lightnovel.fun/\",\"token\"))).security_key\n    }\n}\noption={\"method\":\"POST\",\"body\":JSON.stringify(body)};\noption.headers={ \"Content-Type\": \"application/json; charset=UTF-8\" };\njava.put('url',String(url+','+JSON.stringify(option)))",
+    "weight": 0
+  }
+]
