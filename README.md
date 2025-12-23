@@ -8,7 +8,7 @@
 
 ## 导入地址
 
-- [GitHub Raw（可能需要翻墙）]
+- GitHub Raw（可能需要翻墙）
 ```
 https://raw.githubusercontent.com/fusn126/lk-book-source/master/lk.json
 ```
