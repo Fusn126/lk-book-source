@@ -1,0 +1,70 @@
+{
+  "bookSourceComment": "TODO: 使用说明、登录要求、作者与许可",
+  "bookSourceGroup": "TODO",
+  "bookSourceName": "TODO",
+  "bookSourceType": 0,
+  "bookSourceUrl": "https://example.com",
+  "bookUrlPattern": "",
+  "customOrder": 0,
+  "enabled": true,
+  "enabledCookieJar": true,
+  "enabledExplore": false,
+  "exploreUrl": "",
+  "header": "",
+  "lastUpdateTime": 0,
+  "loginCheckJs": "",
+  "loginUi": "",
+  "loginUrl": "",
+  "respondTime": 180000,
+  "ruleBookInfo": {
+    "author": "",
+    "coverUrl": "",
+    "init": "",
+    "intro": "",
+    "kind": "",
+    "lastChapter": "",
+    "name": "TODO",
+    "tocUrl": "",
+    "wordCount": ""
+  },
+  "ruleContent": {
+    "content": "TODO",
+    "nextContentUrl": "",
+    "replaceRegex": "",
+    "sourceRegex": "",
+    "webJs": ""
+  },
+  "ruleExplore": {
+    "author": "",
+    "bookList": "",
+    "bookUrl": "",
+    "coverUrl": "",
+    "intro": "",
+    "kind": "",
+    "lastChapter": "",
+    "name": "",
+    "wordCount": ""
+  },
+  "ruleSearch": {
+    "author": "",
+    "bookList": "TODO",
+    "bookUrl": "TODO",
+    "checkKeyWord": "TODO",
+    "coverUrl": "",
+    "intro": "",
+    "kind": "",
+    "lastChapter": "",
+    "name": "TODO",
+    "wordCount": ""
+  },
+  "ruleToc": {
+    "chapterList": "TODO",
+    "chapterName": "TODO",
+    "chapterUrl": "TODO",
+    "isVolume": "",
+    "nextTocUrl": "",
+    "updateTime": ""
+  },
+  "searchUrl": "TODO",
+  "weight": 0
+}
