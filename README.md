@@ -1,12 +1,13 @@
 # lk-book-source
-上半年轻之国度的app挂掉了，我上网找了一圈没有符合我需求的书源，就基于[source-j-legado](https://github.com/jiwangyihao/source-j-legado)这个项目新开发了一版，解决了一些我个人的痛点。
-
-下面是具体修改的点：
-* 可阅读的小说不再局限于合集，单卷小说也可以进行阅读。搜索也去除限制，可以搜索全部轻小说；
-* 发现改为最新，整卷，原创三个模块；
-* 去除漫画模块和评论功能，只保留轻小说阅读功能；
+轻之国度最近发布了新的api，老的书源全都不能用了。所以用ai开发了一个新的书源，附赠了一个开发阅读书源的skill。
+新版在lk-new-api.json这个文件里，旧版保留用作存档。
+旧版基于[source-j-legado](https://github.com/jiwangyihao/source-j-legado)这个项目
 
 ## 导入地址
+- GitHub Raw（可能需要翻墙）
+```
+https://raw.githubusercontent.com/fusn126/lk-book-source/master/lk-new-api.json
+```
 
 - GitHub Raw（可能需要翻墙）
 ```
