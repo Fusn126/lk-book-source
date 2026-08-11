@@ -1,6 +1,8 @@
 # lk-book-source
 轻之国度最近发布了新的api，老的书源全都不能用了。所以用ai开发了一个新的书源，附赠了一个开发阅读书源的skill。
+
 新版在lk-new-api.json这个文件里，旧版保留用作存档。
+
 旧版基于[source-j-legado](https://github.com/jiwangyihao/source-j-legado)这个项目
 
 ## 导入地址
